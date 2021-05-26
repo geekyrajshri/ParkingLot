@@ -3,7 +3,14 @@
 >##### Dependencies:
 - The application requires python version `3.7` and `pipenv`
 
-- Install Pipenv `$ pip install pipenv`
+- Install python for ubuntu and mac
+  1. https://phoenixnap.com/kb/how-to-install-python-3-ubuntu
+  2. https://docs.python-guide.org/starting/install3/osx/
+
+- Install pip
+  1. https://linuxize.com/post/how-to-install-pip-on-ubuntu-20.04/
+
+- Install Pipenv `$ pip3 install pipenv`
 
 - Or, if you’re using Ubuntu 17.10:
 ```

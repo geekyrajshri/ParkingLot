@@ -1,0 +1,9 @@
+fileignoreconfig:
+- filename: .idea/codeStyles/Project.xml
+  checksum: 6f90bdb9c45d11471929f5827032b2dc4e3aa6a9f19ace40d87dd81f7254c295
+- filename: .idea/dbnavigator.xml
+  checksum: 0f414b4127a383fcb647562e7aa63cdff9e2709925e17d3149f951503ec4ddd2
+- filename: .idea/workspace.xml
+  checksum: 3e8cd35f17e0debe839aa622a5b6e4bb4602db14873457218d41b540e5929fb9
+- filename: Pipfile.lock
+  checksum: 753431a62afada7238e14a86a6c2bfaef208b81d92a86a9b4a40656e0a6442ac

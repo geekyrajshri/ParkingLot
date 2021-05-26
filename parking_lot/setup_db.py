@@ -1,9 +1,12 @@
+import os
+
 from parking_lot.db import connection, insert_data
 
 DATABASE = r"parking_lot.db"
 
 
 def database_setup():
+    os.remove(DATABASE)
     sql_create_drivers_table = """ CREATE TABLE IF NOT EXISTS drivers (
                                             id integer PRIMARY KEY,
                                             registration_number VARCHAR(255),
@@ -12,7 +15,7 @@ def database_setup():
 
     sql_create_parking_lot_table = """CREATE TABLE IF NOT EXISTS parking_lot (
                                             slot_id integer PRIMARY KEY,
-                                            occupied VARCHAR(25)
+                                            occupied INT
                                         );"""
 
     sql_create_driver_parking_slot_table = """CREATE TABLE IF NOT EXISTS driver_slot (

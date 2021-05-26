@@ -5,8 +5,11 @@ name = "pypi"
 
 [packages]
 
-
 [dev-packages]
+pytest = "*"
 
 [requires]
 python_version = "3.7"
+
+[scripts]
+unit-test = "python -m pytest -vv tests/unit"

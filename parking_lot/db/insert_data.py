@@ -37,8 +37,7 @@ def add_driver_slot(conn, driver_slot):
 
 
 def update_slot_occupancy(conn, slot_id, o):
-    print("update",slot_id,o)
     sql = ''' update  parking_lot set occupied=? where slot_id=?'''
     cur = conn.cursor()
-    cur.execute(sql, (o, str(slot_id)))
+    cur.execute(sql, (o, slot_id))
     conn.commit()

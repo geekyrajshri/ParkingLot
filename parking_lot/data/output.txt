@@ -1,0 +1,11 @@
+Created parking of 1 slots
+Car with vehicle registration number "KA-01-HH-1234" has been parked at slot number 1
+No slots available
+1
+No parked car matches the query
+No slots available
+No parked car matches the query
+Slot number 1 vacated, the car with vehicle registration number "KA-01-HH-1234" left the space, the driver of the car was of age 21
+Car with vehicle registration number "HR-29-TG-3098" has been parked at slot number 1
+No parked car matches the query
+KA-01-HH-1234

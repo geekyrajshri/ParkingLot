@@ -35,19 +35,19 @@ def detect_query(details):
         print(e)
 
 
-def execute_query(handle, data):
-    response = handle(data)
+def execute_query(handle, data, db):
+    response = handle(data, db)
     return response
 
 
-def execute_parking_queries(parking_queries):
+def execute_parking_queries(parking_queries, db=setup_db.DATABASE):
     try:
         tasks = parking_queries.splitlines()
         responses = []
         for task in tasks:
             details = task.split(" ")
             handler = detect_query(details)
-            responses.append(execute_query(handler["handle"], handler["data"]))
+            responses.append(execute_query(handler["handle"], handler["data"], db))
         return responses
     except Exception as e:
         print(e.with_traceback())

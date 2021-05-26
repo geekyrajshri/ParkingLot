@@ -5,8 +5,9 @@ from parking_lot.db import connection, insert_data
 DATABASE = r"parking_lot.db"
 
 
-def database_setup():
-    os.remove(DATABASE)
+def database_setup(db=DATABASE):
+    if os.path.exists(db):
+        os.remove(db)
     sql_create_drivers_table = """ CREATE TABLE IF NOT EXISTS drivers (
                                             id integer PRIMARY KEY,
                                             registration_number VARCHAR(255),
@@ -27,7 +28,7 @@ def database_setup():
                                         );"""
 
     # create a database connection
-    conn = connection.create_connection(DATABASE)
+    conn = connection.create_connection(db)
 
     # create tables
     if conn is not None:

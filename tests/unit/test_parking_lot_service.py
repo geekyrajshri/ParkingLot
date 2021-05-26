@@ -2,7 +2,7 @@ import os
 from unittest import mock
 from unittest.mock import Mock
 
-from parking_lot import parking_lot_service
+from parking_lot import parking_lot_service, setup_db
 
 
 @mock.patch("parking_lot.parking_lot_service.database_setup")
@@ -33,15 +33,10 @@ def test_should_successfully_read_data_input_file():
         os.remove(filename)
 
 
-def test_should_successfully_read_data_input_file():
-    filename = 'test_data.txt'
-    try:
-        expected_data: str = 'Create Parking Lot of size 3'
-        file = open(filename, "w")
-        file.write(expected_data)
-        file.close()
-        actual_data = parking_lot_service.read_data(filename)
-        assert actual_data == expected_data
-    finally:
-        file.close()
-        os.remove(filename)
+def test_should_successfully_execute_query():
+    query: str = 'Create_parking_lot 1\n'
+    setup_db.database_setup(r'test.db')
+
+    actual_data = parking_lot_service.execute_parking_queries(query, r'test.db')
+    assert actual_data == ['Created parking of 1 slots']
+
